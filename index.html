@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luke Bleichrodt | Boise Cascade</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#eef1f3;font-family:Arial,sans-serif;color:#25313b;padding:20px}
+.card{background:white;width:100%;max-width:420px;text-align:center;padding:38px 25px;border-radius:20px;box-shadow:0 8px 30px #0002}
+.logo{font-size:29px;font-weight:800;color:#174c79;letter-spacing:-1px}
+.logo span{color:#c63732}
+.line{height:5px;background:#c63732;width:65px;margin:22px auto}
+h1{font-size:27px;margin:15px 0 7px}
+.role{font-size:17px;color:#52616b;margin:0 0 28px}
+a.btn{display:block;background:#174c79;color:white;text-decoration:none;padding:16px;margin:12px 0;border-radius:10px;font-size:17px;font-weight:bold}
+a.save{background:#c63732}
+.footer{font-size:12px;color:#88939a;margin-top:30px}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="logo">BOISE <span>CASCADE</span></div>
+<div class="line"></div>
+<h1>Luke Bleichrodt</h1>
+<p class="role">Outside Sales Rep</p>
+<a class="btn" href="tel:+17197311227">Call Me</a>
+<a class="btn" href="mailto:Lukebleichrodt@bc.com">Send Email</a>
+<a class="btn save" id="save" href="#">Save Contact</a>
+<p class="footer">Boise Cascade</p>
+</main>
+<script>
+const vcard="BEGIN:VCARD\r\nVERSION:3.0\r\nN:Bleichrodt;Luke;;;\r\nFN:Luke Bleichrodt\r\nORG:Boise Cascade\r\nTITLE:Outside Sales Rep\r\nTEL;TYPE=CELL:+17197311227\r\nEMAIL;TYPE=WORK:Lukebleichrodt@bc.com\r\nEND:VCARD\r\n";
+const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});
+const url=URL.createObjectURL(blob);
+const link=document.getElementById("save");
+link.href=url;
+link.download="Luke-Bleichrodt.vcf";
+</script>
+</body>
+</html>
